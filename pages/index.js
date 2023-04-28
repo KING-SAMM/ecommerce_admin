@@ -1,4 +1,19 @@
+import { useSession, signIn, signOut } from "next-auth/react"
+
 export default function Home() {
+  const { data: session } = useSession();
+
+  if (!session) {
+    return  (
+      // Login page
+      <div className='bg-blue-900 w-screen h-screen flex items-center'>
+        <div className="text-center w-full">
+          <div className="bg-white p-2 px-4 rounded-lg">Not Logged In</div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     // Login page
     <div className='bg-blue-900 w-screen h-screen flex items-center'>
