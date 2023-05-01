@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+input, textarea {
+    @apply border-2 border-gray-400 rounded-md w-full px-1;
+    @apply mb-2;
+}
+
+input:focus, textarea:focus {
+    @apply border-blue-300;
+}
+
+h1 {
+    @apply text-blue-900 mb-2 text-xl;
+}
+
+label {
+    @apply text-blue-900;
+}
+
+.btn-primary {
+    @apply bg-blue-900 text-white py-1 px-4 rounded-md;
+}
+
 /* user: kcsamm11, pass: HzZroEEd6BbmTO3o, IP: 102.88.62.71/32 */
 
 /* kctest123 */
