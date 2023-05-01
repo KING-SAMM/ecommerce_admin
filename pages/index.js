@@ -10,7 +10,7 @@ export default function Home() {
 
   return (
     <Layout>
-      <h1 className="text-4xl pl-2">Dashboard</h1>
+      <h1 className="text-4xl">Dashboard</h1>
       <div className="text-blue-900 flex justify-between">
         <h1>
           Hello, <b>{session?.user?.name}</b>
