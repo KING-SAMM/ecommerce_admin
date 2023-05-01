@@ -1,5 +1,6 @@
 import Layout from '@/components/Layout'
 import React, { useState } from 'react'
+import axios from 'axios';
 
 export default function New() {
     // Define form data items 
@@ -8,10 +9,12 @@ export default function New() {
     const [price, setPrice] = useState('');
 
     // Send form data to API 
-    async function createProduct() {
-        const data = {title, description, price}
+    async function createProduct(e) {
+        e.preventDefault();
 
-        await axios.post('/api/products', data)
+        const data = {title,description,price};
+
+        await axios.post('/api/products', data);
     }
 
   return (
