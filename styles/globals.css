@@ -19,8 +19,27 @@ label {
     @apply text-blue-900;
 }
 
+
+/* Button */
 .btn-primary {
     @apply bg-blue-900 text-white py-1 px-4 rounded-md;
+}
+
+/* Tabble  */
+table.basic {
+    @apply w-[60%];
+}
+
+table.basic thead {
+    @apply bg-blue-100 text-left;
+}
+
+table.basic tr, td {
+    @apply border border-blue-200 p-1;
+}
+
+table.basic a {
+    @apply bg-blue-900 text-white text-sm py-[2px] px-2 rounded-md gap-1 inline-flex;
 }
 
 /* user: kcsamm11, pass: HzZroEEd6BbmTO3o, IP: 102.88.62.71/32 */

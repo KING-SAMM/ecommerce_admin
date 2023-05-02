@@ -9,6 +9,16 @@ export default async function handler(req, res) {
     // connect to database 
     await mongooseConnect();
 
+    if (method === 'GET') {
+        // Find single product given id
+        if (req.query?.id) {
+            res.json(await Product.findOne({_id:req.query.id}))
+        } else {
+            // Get all products in the database
+            res.json(await Product.find())
+        }
+    }
+
     if (method === 'POST') {
         // Grab data from payload 
         const {title,description,price} = req.body;
