@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     await mongooseConnect();
 
     if (method === 'GET') {
-        // Find single product given id
+        // Get single product given id
         if (req.query?.id) {
             res.json(await Product.findOne({_id:req.query.id}))
         } else {
@@ -32,5 +32,12 @@ export default async function handler(req, res) {
         const {title,description,price,_id} = req.body;
         await Product.updateOne({_id}, {title,description,price});
         res.json(true);
+    }
+
+    if (method === 'DELETE') {
+        if (req.query?.id) {
+            await Product.deleteOne({_id:req.query.id})
+            res.json(true);
+        }
     }
   }
